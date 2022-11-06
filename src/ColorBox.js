@@ -12,7 +12,7 @@ export function ColorBox({ color }) {
         background: color,
         marginTop: "10px"
     };
-    return <>
+    return <React.Fragment>
         <div style={styles}></div>
-    </>;
+    </React.Fragment>;
 }
