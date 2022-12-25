@@ -61,3 +61,6 @@ App contains Logic + View
    7. Flow: User clicks -> `onClick` trigger -> `setLike` -> React updates view
  
 ### Conditional rendering
+
+## Life Cycle Of Component
+Each component in React has a lifecycle which you can monitor and manipulate during its three main phases. The three phases are: Mounting, Updating, and Unmounting.

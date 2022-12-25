@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { Routes, Route, Navigate, useParams } from "react-router-dom";
 import { NotFound } from './NotFound';
@@ -10,16 +10,13 @@ import { useNavigate } from 'react-router-dom';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import AppBar from '@mui/material/AppBar';
-// import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-// import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-// import IconButton from '@mui/material/IconButton';
-// import MenuIcon from '@mui/icons-material/Menu';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { MovieDetailes } from './MovieDetailes';
 import { BasicForms } from './BasicForms';
+
 
 function App() {
   const navigate = useNavigate()
@@ -29,21 +26,9 @@ function App() {
       mode: mode,
     },
   });
-  // const [movieList, setMovieList] = useState([])
-  // useEffect(() => {
-  //   fetch("https://6322ddef362b0d4e7dd51013.mockapi.io/movies")
-  //     .then((data) => data.json())
-  //     .then((msg1) => setMovieList(msg1))
-  //   // .then((msg) => console.log(msg))
-  // }, []);
   return (
     <div className="App">
-      {/* <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/movies">Movie</Link></li>
-        <li><Link to="/movies/add">Add-Movie</Link></li>
-        <li><Link to="/color-game">Color-Game</Link></li>
-      </ul> */}
+
       <ThemeProvider theme={darkTheme}>
         <Paper sx={{ minHeight: "100vh" }} elevation={1} >
           <AppBar sx={{ position: "fixed" }} className="headElement">

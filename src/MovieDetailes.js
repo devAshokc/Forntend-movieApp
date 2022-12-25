@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
+import { API } from "./global.js"
 // import GradeIcon from '@mui/icons-material/Grade';
 
 export function MovieDetailes() {
@@ -9,9 +10,9 @@ export function MovieDetailes() {
     // const movie = movieList[id]
     // console.log(movieList, movie)
     // movie
-    const [movie, setMovie] = useState([]);
+    const [movie, setMovie] = useState({});
     useEffect(() => {
-        fetch(`https://6322ddef362b0d4e7dd51013.mockapi.io/movies/${id}`)
+        fetch(`${API}/${id}`)
             .then((data) => data.json())
             .then((n) => setMovie(n));
     }, []);
