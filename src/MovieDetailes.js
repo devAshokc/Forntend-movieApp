@@ -12,7 +12,7 @@ export function MovieDetailes() {
     // movie
     const [movie, setMovie] = useState({});
     useEffect(() => {
-        fetch(`${API}/${id}`)
+        fetch(`https://movie-backend-d328.onrender.com/movies/${id}`)
             .then((data) => data.json())
             .then((n) => setMovie(n));
     }, []);

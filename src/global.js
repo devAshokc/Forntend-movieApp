@@ -1,1 +1,1 @@
-export const API = `https://movieapp-nx3q.onrender.com/movies`;
+export const API = `https://movie-backend-d328.onrender.com`;

@@ -1,17 +1,32 @@
-// import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useNavigate } from 'react-router-dom';
+import Box from '@mui/material/Box'
 import { useFormik } from 'formik';
 import * as yup from 'yup'
 import { API } from "./global.js"
 
 const movieValidationSchema = yup.object({
-    name: yup.string().required("Why not fill this name😅").min(1, "need a longer name🤔"),
-    poster: yup.string().required("Why not fill this poster😅").min(4, "need a longer poster🤔"),
-    rating: yup.number().required("Why not fill this rating😅").min(0, "need a bigger rating🤔").max(10),
-    summary: yup.string().required("Why not fill this summary😅").min(20, "need a longer summary🤔"),
-    trailer: yup.string().required("Why not fill this trailer😅").min(4, "need a longer trailer🤔")
+    name: yup
+        .string()
+        .required("Why not fill this name😅")
+        .min(1, "need a longer name🤔"),
+    poster: yup
+        .string()
+        .required("Why not fill this poster😅")
+        .min(4, "need a longer poster🤔"),
+    rating: yup
+        .number()
+        .required("Why not fill this rating😅")
+        .min(0, "need a bigger rating🤔").max(10),
+    summary: yup
+        .string()
+        .required("Why not fill this summary😅")
+        .min(20, "need a longer summary🤔"),
+    trailer: yup
+        .string()
+        .required("Why not fill this trailer😅")
+        .min(4, "need a longer trailer🤔")
 })
 export function Addmovies() {
     const { handleSubmit, values, handleChange, touched, handleBlur, errors } = useFormik({
@@ -30,8 +45,7 @@ export function Addmovies() {
     })
     const navigate = useNavigate()
     const addMovie = (newMovieList) => {
-        // setMovieList([...movieList, newMovieList]);
-        fetch(`${API}`, {
+        fetch(`https://movie-backend-d328.onrender.com/movies`, {
             method: "POST",
             body: JSON.stringify(newMovieList),
             headers: {
@@ -41,7 +55,11 @@ export function Addmovies() {
             .catch((n) => console.log('error occurred' + n))
     };
     return <>
-        <form onSubmit={handleSubmit} className="form">
+        <Box onSubmit={handleSubmit} className="form" component="form" sx={{
+            maxWidth: "400px",
+            maxHeight: "400px",
+            marginTop: "60px"
+        }} >
             <TextField
                 name="name"
                 value={values.name}
@@ -49,7 +67,7 @@ export function Addmovies() {
                 onChange={handleChange}
                 error={touched.name && errors.name}
                 helperText={touched.name && errors.name ? errors.name : null}
-                label="Name" variant="filled" />
+                label="Name" variant="outlined" />
 
 
             <TextField
@@ -59,7 +77,7 @@ export function Addmovies() {
                 onChange={handleChange}
                 error={touched.poster && errors.poster}
                 helperText={touched.poster && errors.poster ? errors.poster : null}
-                label="Poster" variant="filled" />
+                label="Poster" variant="outlined" />
 
             <TextField
                 name="rating"
@@ -68,7 +86,7 @@ export function Addmovies() {
                 onChange={handleChange}
                 error={touched.rating && errors.rating}
                 helperText={touched.rating && errors.rating ? errors.rating : null}
-                label="Rating" variant="filled" />
+                label="Rating" variant="outlined" />
 
             <TextField
                 name="summary"
@@ -77,7 +95,7 @@ export function Addmovies() {
                 onChange={handleChange}
                 error={touched.summary && errors.summary}
                 helperText={touched.summary && errors.summary ? errors.summary : null}
-                label="Summary" variant="filled" />
+                label="Summary" variant="outlined" />
             <TextField
                 name="trailer"
                 value={values.trailer}
@@ -85,10 +103,8 @@ export function Addmovies() {
                 onChange={handleChange}
                 error={touched.trailer && errors.trailer}
                 helperText={touched.trailer && errors.trailer ? errors.trailer : null}
-                label="Trailer" variant="filled" />
-            {/* Copy the movieList and add the newMovieList */}
+                label="Trailer" variant="outlined" />
             <Button type="Submit" variant="contained">Add Movie</Button>
-            {/* <p>{name}- {poster}- {rating}- {summary}</p> */}
-        </form>
+        </Box>
     </>;
 }

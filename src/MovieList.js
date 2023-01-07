@@ -11,7 +11,7 @@ export function MovieList() {
     const [movieList, setMovieList] = useState([])
     //step-1
     const getMovies = () => {
-        fetch(`${API}`, {
+        fetch(`https://movie-backend-d328.onrender.com/movies`, {
             method: "GET",
         })
             .then((data) => data.json())
@@ -22,8 +22,8 @@ export function MovieList() {
     useEffect(() => getMovies(), [])
     //step-3
     const deleteMovie = (id) => {
-        // console.log("deleting....", id)
-        fetch(`${API}/${id}`, {
+        console.log("deleting....", id)
+        fetch(`https://movie-backend-d328.onrender.com/movies/${id}`, {
             method: "DELETE",
         })
             .then((data) => data.json())
@@ -34,9 +34,9 @@ export function MovieList() {
             {movieList.map((n, i) =>
                 <Movies
                     movie={n}
-                    key={n.id}
+                    key={n._id}
                     id={n.id}
-                    deleteButton={<IconButton color="error" onClick={() => deleteMovie(n.id)} aria-label="delete">
+                    deleteButton={<IconButton color="error" onClick={() => deleteMovie(n._id)} aria-label="delete">
                         <DeleteIcon />
                     </IconButton>}
                     EditButton={<IconButton color="secondary" onClick={() => navigate(`/movies/edit/${n.id}`)} aria-label="delete">
