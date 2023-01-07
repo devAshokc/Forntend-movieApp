@@ -11,7 +11,7 @@ export function MovieList() {
     const [movieList, setMovieList] = useState([])
     //step-1
     const getMovies = () => {
-        fetch(`https://movie-backend-d328.onrender.com/movies`, {
+        fetch(`${API}/movies`, {
             method: "GET",
         })
             .then((data) => data.json())
@@ -23,7 +23,7 @@ export function MovieList() {
     //step-3
     const deleteMovie = (id) => {
         console.log("deleting....", id)
-        fetch(`https://movie-backend-d328.onrender.com/movies/${id}`, {
+        fetch(`${API}/movies/${id}`, {
             method: "DELETE",
         })
             .then((data) => data.json())

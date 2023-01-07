@@ -45,7 +45,7 @@ export function Addmovies() {
     })
     const navigate = useNavigate()
     const addMovie = (newMovieList) => {
-        fetch(`https://movie-backend-d328.onrender.com/movies`, {
+        fetch(`${API}/movies`, {
             method: "POST",
             body: JSON.stringify(newMovieList),
             headers: {
