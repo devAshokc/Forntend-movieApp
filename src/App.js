@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { Routes, Route, Navigate, useParams } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { NotFound } from './NotFound';
 import { Home } from './Home';
 import { Addmovies } from './Addmovies';
@@ -16,6 +16,7 @@ import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { MovieDetailes } from './MovieDetailes';
 import { BasicForms } from './BasicForms';
+import { EditMovie } from './EditMovie';
 
 
 function App() {
@@ -27,14 +28,13 @@ function App() {
     },
   });
   return (
-    <div className="App">
-
+    <div className="home-sd">
       <ThemeProvider theme={darkTheme}>
         <Paper sx={{ minHeight: "100vh" }} elevation={1} >
           <AppBar sx={{ position: "fixed" }} className="headElement">
             <Toolbar>
-              <Button color="inherit" onClick={() => navigate("./")}>HOME</Button>
-              <Button color="inherit" onClick={() => navigate("/movies")}>MOVIES</Button>
+              <Button color="inherit" onClick={() => navigate("/")}>HOME</Button>
+              <Button color="inherit" onClick={() => navigate("/movies")}>MOVIES </Button>
               <Button color="inherit" onClick={() => navigate("/movies/add")}>ADD_MOVIE</Button>
               <Button color="inherit" onClick={() => navigate("/color-game")}>COLOR_GAME</Button>
               <Button color="inherit"
@@ -61,13 +61,7 @@ function App() {
         </Paper>
       </ThemeProvider>
       <br></br>
-
     </div>
   );
 }
-function EditMovie() {
-  const { id } = useParams();
-  return <h1>Editing Movie...{id}</h1>
-}
-
 export default App;

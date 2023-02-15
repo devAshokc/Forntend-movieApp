@@ -1,6 +1,13 @@
-
+.home-sd::before {
+  background-image: url("https://www.online-tech-tips.com/wp-content/uploads/2020/04/phone-watch-movies.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.App{
+  margin-top: 100px;
+}
 .movie-container {
-  /* background-color: orange; */
   width: 340px;
   height: min-content;
 }
@@ -32,45 +39,35 @@
 
 .movie-list-container {
   display: flex;
+  margin-top:100px;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.counter-container{
-  display:flex;
+.counter-container {
+  display: flex;
   flex-flow: rows;
   /* justify-content: space-evenly;
   align-items: center; */
   gap: 1rem;
 }
+
 /* .counter-container :nth-child(odd){
   border-color: rgb(7, 170, 7);
 }
 .counter-container :nth-child(even){
   border-color: rgba(243, 31, 31, 0.863);
 } */
-body{
-  font-family:Roboto,sans-serif;
+body {
+  font-family: Roboto, sans-serif;
 }
-.form{
-  display: flex;
-  flex-direction: column;
-  max-width: 650px;
-  margin: 0px auto;
-  gap: 20px;
+
+body {
+  margin-top: 0px auto;
 }
-.form > input,button {
-  font-size: 18px;
-  padding: 5px;
-}
-.Container{
-  padding: 77px;
-}
-body{
-  margin: 0px auto;
-}
-.movie-details-container{
+
+.movie-details-container {
   max-width: 750px;
   padding: 20px;
 }

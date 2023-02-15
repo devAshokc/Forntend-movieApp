@@ -37,7 +37,7 @@ export function Movies({ movie, id, deleteButton, EditButton }) {
             </CardContent>
             <CardActions>
                 <Counter />
-                {EditButton} {deleteButton}
+                {deleteButton} {EditButton} 
             </CardActions>
         </Card>
     </>;

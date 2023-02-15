@@ -15,7 +15,7 @@ export function MovieDetailes() {
         fetch(`${API}/movies/${id}`)
             .then((data) => data.json())
             .then((n) => setMovie(n));
-    }, []);
+    }, [id]);
     const navigate = useNavigate();
     const styles = {
         // Ternary Operator

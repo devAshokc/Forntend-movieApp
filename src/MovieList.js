@@ -34,9 +34,9 @@ export function MovieList() {
             {movieList.map((n, i) =>
                 <Movies
                     movie={n}
-                    key={n._id}
+                    key={n.id}
                     id={n.id}
-                    deleteButton={<IconButton color="error" onClick={() => deleteMovie(n._id)} aria-label="delete">
+                    deleteButton={<IconButton color="error" onClick={() => deleteMovie(n.id)} aria-label="delete">
                         <DeleteIcon />
                     </IconButton>}
                     EditButton={<IconButton color="secondary" onClick={() => navigate(`/movies/edit/${n.id}`)} aria-label="delete">
