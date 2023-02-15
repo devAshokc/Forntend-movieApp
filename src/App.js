@@ -30,7 +30,7 @@ function App() {
   return (
     <div className="home-sd">
       <ThemeProvider theme={darkTheme}>
-        <Paper sx={{ minHeight: "100vh" }} elevation={1} >
+        <Paper sx={{ minHeight: "100vh",padding:"20px" }} elevation={1} >
           <AppBar sx={{ position: "fixed" }} className="headElement">
             <Toolbar>
               <Button color="inherit" onClick={() => navigate("/")}>HOME</Button>

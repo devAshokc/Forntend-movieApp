@@ -39,7 +39,7 @@
 
 .movie-list-container {
   display: flex;
-  margin-top:100px;
+  margin-top:65px;
   gap: 16px;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -64,7 +64,7 @@ body {
 }
 
 body {
-  margin-top: 0px auto;
+  margin: 0px auto;
 }
 
 .movie-details-container {
